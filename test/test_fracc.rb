@@ -1,14 +1,14 @@
-require 'lib/fracc'
+require_relative '../lib/fracc'
 require 'test/unit'
 
 class TestFracc < Test::Unit::TestCase
 	def setup
 		@x=Fracc.new(1,2)
-		@y=Fraccracc.new(3,4)
+		@y=Fracc.new(3,4)
 	end
 	
 	#def tear_down
-      # nothing
+      #nothing
     #end
 	
 	def test_simple
@@ -20,11 +20,11 @@ class TestFracc < Test::Unit::TestCase
 		assert_equal("(4,6)", (@x/@y).to_s, "Division correcta")
 	end
 	
-#	def test_type_check
+	#def test_type_check
 	    
-      #  assert_raise(RuntimeError) {Fracc.new('1','1')}
+      #assert_raise(RuntimeError) {Fracc.new('1','1')}
         
-  #  end
+  	#end
 	
 	def test_failure
 		assert_not_equal("(3,2)", @x.to_s, "Setup @a fallido")
