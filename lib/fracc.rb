@@ -24,12 +24,21 @@ class Fracc
 		return (n/aux)*d
 	end
 	
+	def simplificar(num,den)
+		aux=gcd(num,den)
+		num=num/aux
+		den=den/aux
+		f=Fracc.new(num,den)
+		return f
+	end
 	#SUMA
 	def +(numero)
 		aux=mcm(@den,numero.den)
 		num1=(aux/@den)*@num
 		num2=(aux/numero.den)*numero.num
-		Fracc.new(num1+num2,aux)
+		num1=num1+num2
+		s=simplificar(num1,aux)
+		Fracc.new(s.num,s.den)
 	end
 	
 	#RESTA
@@ -37,15 +46,23 @@ class Fracc
 		aux=mcm(@den,numero.den)
 		num1=(aux/@den)*@num
 		num2=(aux/numero.den)*numero.num
-		Fracc.new(num1-num2,aux)
+		num1=num1-num2
+		s=simplificar(num1,aux)
+		Fracc.new(s.num,s.den)
 	end
 	
 	#MULTIPLICACION
 	def *(numero)
-		Fracc.new(@num * numero.num, @den * numero.den)
+		num1=@num * numero.num
+		num2=@den * numero.den
+		s=simplificar(num1,num2)
+		Fracc.new(s.num,s.den)
 	end
 	#DIVISION
 	def /(numero)
-		Fracc.new(@num * numero.den, @den * numero.num)
+		num1=@num * numero.den
+		num2=@den * numero.num
+		s=simplificar(num1,num2)
+		Fracc.new(s.num,s.den)
 	end
 end

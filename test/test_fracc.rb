@@ -17,7 +17,7 @@ class TestFracc < Test::Unit::TestCase
 		assert_equal("(5,4)", (@x+@y).to_s, "Suma correcta")
 		assert_equal("(-1,4)", (@x-@y).to_s, "Resta correcta")
 		assert_equal("(3,8)", (@x*@y).to_s, "Multiplicacion correcta")
-		assert_equal("(4,6)", (@x/@y).to_s, "Division correcta")
+		assert_equal("(2,3)", (@x/@y).to_s, "Division correcta")
 	end
 	
 	#def test_type_check
