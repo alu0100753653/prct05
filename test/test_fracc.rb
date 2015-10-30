@@ -1,4 +1,4 @@
-require_relative '../lib/fracc'
+require './lib/fracc'
 require 'test/unit'
 
 class TestFracc < Test::Unit::TestCase
